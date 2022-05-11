@@ -1,0 +1,601 @@
+2022-03-03 10:30:44.693  INFO 12752 --- [main] c.p.s.SocialNetworkApplication           : Starting SocialNetworkApplication using Java 1.8.0_302 on DESKTOP-1PEFF8P with PID 12752 (C:\Users\User\IdeaProjects\social_network\target\classes started by User in C:\Users\User\IdeaProjects\social_network)
+2022-03-03 10:30:44.712  INFO 12752 --- [main] c.p.s.SocialNetworkApplication           : No active profile set, falling back to default profiles: default
+2022-03-03 10:30:47.584  INFO 12752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-03 10:30:47.671  INFO 12752 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
+2022-03-03 10:30:48.873  INFO 12752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-03 10:30:48.892  INFO 12752 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-03 10:30:48.893  INFO 12752 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-03 10:30:49.148  INFO 12752 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-03 10:30:49.149  INFO 12752 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4205 ms
+2022-03-03 10:30:49.387  INFO 12752 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-03 10:30:49.548  INFO 12752 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-03 10:30:50.180  INFO 12752 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-03 10:30:50.562  INFO 12752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-03 10:30:51.178  INFO 12752 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-03 10:30:51.211  INFO 12752 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-03 10:30:53.387  INFO 12752 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-03 10:30:53.399  INFO 12752 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 10:30:54.120  WARN 12752 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-03 10:30:55.044  INFO 12752 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@586728e8, org.springframework.security.web.context.SecurityContextPersistenceFilter@45d389f2, org.springframework.security.web.header.HeaderWriterFilter@3b57f915, org.springframework.web.filter.CorsFilter@3316527e, org.springframework.security.web.authentication.logout.LogoutFilter@69e2fe3b, com.project.social_network.security.JWTAuthenticationFilter@8b41ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@66298fe9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4efb13f1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@786ff0ea, org.springframework.security.web.session.SessionManagementFilter@340c5fb6, org.springframework.security.web.access.ExceptionTranslationFilter@3a3ad8e7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@210a26b]
+2022-03-03 10:30:55.477  INFO 12752 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-03 10:30:55.511  INFO 12752 --- [main] c.p.s.SocialNetworkApplication           : Started SocialNetworkApplication in 12.146 seconds (JVM running for 15.74)
+2022-03-03 10:31:02.389  INFO 12752 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 10:31:02.389  INFO 12752 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-03 10:31:02.390  INFO 12752 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-03-03 10:31:04.165  INFO 12752 --- [http-nio-8082-exec-2] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 10:31:04.194  INFO 12752 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "stark@mail.com",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxNSIsInVzZXJuYW1lIjoic3RhcmtAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2MjgxODY0LCJleHAiOjE2NDYyODI3NjR9.404y35w5CWiAJNtKoTosd1GhWznBy1P74lZ1Lxi2tHweCE_E0oJmliM68oifkidE7IkFSEE0-6U-65JN3BdtdA"}
+
+2022-03-03 10:36:18.316 ERROR 12752 --- [http-nio-8082-exec-5] c.p.s.security.JWTTokenProvider          : JWT expired at 2022-03-02T21:45:09Z. Current time: 2022-03-03T10:36:18Z, a difference of 46269313 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-03-03 10:36:44.372  INFO 12752 --- [http-nio-8082-exec-6] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxNSIsInVzZXJuYW1lIjoic3RhcmtAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2MjgxODY0LCJleHAiOjE2NDYyODI3NjR9.404y35w5CWiAJNtKoTosd1GhWznBy1P74lZ1Lxi2tHweCE_E0oJmliM68oifkidE7IkFSEE0-6U-65JN3BdtdA
+
+-- RESPONSE --
+{"id":15,"firstname":"Anthony","lastname":"Stark","email":"stark@mail.com","bio":"MARK1!"}
+
+2022-03-03 10:37:27.782 ERROR 12752 --- [http-nio-8082-exec-7] c.p.s.security.JWTTokenProvider          : JWT expired at 2022-03-02T21:41:31Z. Current time: 2022-03-03T10:37:27Z, a difference of 46556782 milliseconds.  Allowed clock skew: 0 milliseconds.
+2022-03-03 10:39:13.230  INFO 12752 --- [http-nio-8082-exec-10] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/%20nurbolat1/send-request
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxNSIsInVzZXJuYW1lIjoic3RhcmtAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2MjgxODY0LCJleHAiOjE2NDYyODI3NjR9.404y35w5CWiAJNtKoTosd1GhWznBy1P74lZ1Lxi2tHweCE_E0oJmliM68oifkidE7IkFSEE0-6U-65JN3BdtdA
+
+-- RESPONSE --
+
+2022-03-03 10:43:03.879  INFO 12752 --- [http-nio-8082-exec-3] c.p.social_network.services.UserService  : Sending Friend Request from tony_stark to nurbolat1
+2022-03-03 10:43:04.322  INFO 12752 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/nurbolat1/send-request
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxNSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxNSIsInVzZXJuYW1lIjoic3RhcmtAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2MjgxODY0LCJleHAiOjE2NDYyODI3NjR9.404y35w5CWiAJNtKoTosd1GhWznBy1P74lZ1Lxi2tHweCE_E0oJmliM68oifkidE7IkFSEE0-6U-65JN3BdtdA
+
+-- RESPONSE --
+User tony_stark sent friend request to user nurbolat1
+
+2022-03-03 10:44:08.613  INFO 12752 --- [http-nio-8082-exec-6] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 10:44:08.617  INFO 12752 --- [http-nio-8082-exec-6] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "amilbekov1@mail.kz",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ"}
+
+2022-03-03 10:44:22.326  INFO 12752 --- [http-nio-8082-exec-7] c.p.social_network.services.UserService  : Getting friends sent requests of user: nurbolat1
+2022-03-03 10:44:22.445  INFO 12752 --- [http-nio-8082-exec-7] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/sent-requests
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+
+-- RESPONSE --
+[]
+
+2022-03-03 10:44:33.201  INFO 12752 --- [http-nio-8082-exec-8] c.p.social_network.services.UserService  : Getting friends retrieved requests of user: nurbolat1
+2022-03-03 10:44:33.205  INFO 12752 --- [http-nio-8082-exec-8] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/retrieved-requests
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+
+-- RESPONSE --
+[{"id":12,"firstname":"Nurbolat","lastname":"Nurbolat","email":"amilbekov2@mail.kz","bio":"NURBOLAT AMILBEK FROM ASTANA IT UNIVERSE"},{"id":14,"firstname":"Some","lastname":"One","email":"someone@mail.ru","bio":"Someone has something!"},{"id":15,"firstname":"Anthony","lastname":"Stark","email":"stark@mail.com","bio":"MARK1!"}]
+
+2022-03-03 10:45:17.074  INFO 12752 --- [http-nio-8082-exec-9] c.p.social_network.services.UserService  : Accepting Friend Request from tony_stark to nurbolat1
+2022-03-03 10:45:17.078  INFO 12752 --- [http-nio-8082-exec-9] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/tony_stark/accept-request
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+
+-- RESPONSE --
+User nurbolat1 accepted friend request from user tony_stark
+
+2022-03-03 10:46:50.429  INFO 12752 --- [http-nio-8082-exec-2] c.p.s.services.CommentService            : Saving comment for Post: 5
+2022-03-03 10:46:50.495  INFO 12752 --- [http-nio-8082-exec-2] c.p.s.web.CommentController              : Commenting post 5
+2022-03-03 10:46:50.503  INFO 12752 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/5/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+{
+    "message": "Infininty war!"
+}
+
+-- RESPONSE --
+{"id":15,"message":"Infininty war!","username":"nurbolat1"}
+
+2022-03-03 10:47:11.059  INFO 12752 --- [http-nio-8082-exec-3] c.p.s.services.CommentService            : Deleting comment 15 for post 5
+2022-03-03 10:47:11.060  INFO 12752 --- [http-nio-8082-exec-3] c.p.s.web.CommentController              : Deleting comment 15
+2022-03-03 10:47:11.081  INFO 12752 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/15/delete
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+
+-- RESPONSE --
+{"message":"Comment was deleted"}
+
+2022-03-03 10:49:27.349  INFO 11588 --- [main] c.p.s.SocialNetworkApplication           : Starting SocialNetworkApplication using Java 1.8.0_302 on DESKTOP-1PEFF8P with PID 11588 (C:\Users\User\IdeaProjects\social_network\target\classes started by User in C:\Users\User\IdeaProjects\social_network)
+2022-03-03 10:49:27.355  INFO 11588 --- [main] c.p.s.SocialNetworkApplication           : No active profile set, falling back to default profiles: default
+2022-03-03 10:49:29.645  INFO 11588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-03 10:49:29.820  INFO 11588 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 5 JPA repository interfaces.
+2022-03-03 10:49:31.915  INFO 11588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-03 10:49:31.932  INFO 11588 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-03 10:49:31.933  INFO 11588 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-03 10:49:32.156  INFO 11588 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-03 10:49:32.157  INFO 11588 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4688 ms
+2022-03-03 10:49:32.997  INFO 11588 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-03 10:49:33.467  INFO 11588 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-03 10:49:34.116  INFO 11588 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-03 10:49:34.401  INFO 11588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-03 10:49:34.843  INFO 11588 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-03 10:49:34.935  INFO 11588 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-03 10:49:38.153  INFO 11588 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-03 10:49:38.175  INFO 11588 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 10:49:39.015  WARN 11588 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-03 10:49:40.150  INFO 11588 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c77344f, org.springframework.security.web.context.SecurityContextPersistenceFilter@2342f1ff, org.springframework.security.web.header.HeaderWriterFilter@13fe5bb7, org.springframework.web.filter.CorsFilter@121ddca4, org.springframework.security.web.authentication.logout.LogoutFilter@64f3ca6, com.project.social_network.security.JWTAuthenticationFilter@2e45a357, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cec590c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1999149e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@297bd171, org.springframework.security.web.session.SessionManagementFilter@7d284f15, org.springframework.security.web.access.ExceptionTranslationFilter@7845b21a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3f06ebe0]
+2022-03-03 10:49:40.887  INFO 11588 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-03 10:49:40.915  INFO 11588 --- [main] c.p.s.SocialNetworkApplication           : Started SocialNetworkApplication in 14.552 seconds (JVM running for 17.425)
+2022-03-03 10:49:46.149  INFO 11588 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 10:49:46.150  INFO 11588 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-03 10:49:46.153  INFO 11588 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-03-03 10:49:46.863  INFO 11588 --- [http-nio-8082-exec-1] c.p.s.services.CommentService            : Deleting comment 15 for post 5
+2022-03-03 10:49:46.993  INFO 11588 --- [http-nio-8082-exec-1] c.p.s.web.CommentController              : Deleting comment 15
+2022-03-03 10:49:47.125  INFO 11588 --- [http-nio-8082-exec-1] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/15/delete
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4MjY0OCwiZXhwIjoxNjQ2MjgzNTQ4fQ.9-bV0Z1dakbhw-QEX5GTaH_SC2zMLf9svZOvEOCG0JniM5RZqQpDeg3q1I_KXxHjF1TsFH0rQ4eK-cvpKUSHrQ
+
+-- RESPONSE --
+{"message":"Comment was deleted"}
+
+2022-03-03 11:08:06.894  INFO 10624 --- [main] c.p.s.SocialNetworkApplication           : Starting SocialNetworkApplication using Java 1.8.0_302 on DESKTOP-1PEFF8P with PID 10624 (C:\Users\User\IdeaProjects\social_network\target\classes started by User in C:\Users\User\IdeaProjects\social_network)
+2022-03-03 11:08:06.902  INFO 10624 --- [main] c.p.s.SocialNetworkApplication           : No active profile set, falling back to default profiles: default
+2022-03-03 11:08:09.623  INFO 10624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-03-03 11:08:09.803  INFO 10624 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 5 JPA repository interfaces.
+2022-03-03 11:08:11.722  INFO 10624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-03-03 11:08:11.753  INFO 10624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-03-03 11:08:11.754  INFO 10624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.56]
+2022-03-03 11:08:12.004  INFO 10624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-03-03 11:08:12.005  INFO 10624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4984 ms
+2022-03-03 11:08:12.366  INFO 10624 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-03-03 11:08:12.544  INFO 10624 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.4.Final
+2022-03-03 11:08:13.122  INFO 10624 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-03-03 11:08:13.441  INFO 10624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-03-03 11:08:13.974  INFO 10624 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-03-03 11:08:14.107  INFO 10624 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2022-03-03 11:08:18.044  INFO 10624 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-03-03 11:08:18.064  INFO 10624 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-03-03 11:08:18.887  WARN 10624 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-03-03 11:08:19.992  INFO 10624 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cbdd1c5, org.springframework.security.web.context.SecurityContextPersistenceFilter@c262f2f, org.springframework.security.web.header.HeaderWriterFilter@48c5698, org.springframework.web.filter.CorsFilter@60816371, org.springframework.security.web.authentication.logout.LogoutFilter@5c25d0d1, com.project.social_network.security.JWTAuthenticationFilter@4567fb2b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@11148dc2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56835f2f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@678586f0, org.springframework.security.web.session.SessionManagementFilter@308e87a1, org.springframework.security.web.access.ExceptionTranslationFilter@57c6feea, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5a13f1f7]
+2022-03-03 11:08:20.591  INFO 10624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-03-03 11:08:21.021  INFO 10624 --- [main] c.p.s.SocialNetworkApplication           : Started SocialNetworkApplication in 15.435 seconds (JVM running for 19.903)
+2022-03-03 11:08:26.201  INFO 10624 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-03-03 11:08:26.202  INFO 10624 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-03-03 11:08:26.204  INFO 10624 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2022-03-03 11:08:29.863  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 11:08:29.921  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "amilbekov1@mail.kz",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NDEwOSwiZXhwIjoxNjQ2Mjg1MDA5fQ.QriWFCGe9LM-cjNxVQUSxQyuNb0eXWWSEIcpYQ43F7TpNcw86jIwoNPcYb3bH37BfK33tGoqZ7iP3rnfCUz3MA"}
+
+2022-03-03 11:08:41.985  INFO 10624 --- [http-nio-8082-exec-3] c.p.social_network.services.PostService  : Getting posts of current user nurbolat1
+2022-03-03 11:08:42.826  INFO 10624 --- [http-nio-8082-exec-3] c.p.social_network.web.PostController    : Getting all posts of current user
+2022-03-03 11:08:42.846  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/my-posts
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxMSIsInVzZXJuYW1lIjoiYW1pbGJla292MUBtYWlsLmt6IiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NDEwOSwiZXhwIjoxNjQ2Mjg1MDA5fQ.QriWFCGe9LM-cjNxVQUSxQyuNb0eXWWSEIcpYQ43F7TpNcw86jIwoNPcYb3bH37BfK33tGoqZ7iP3rnfCUz3MA
+
+-- RESPONSE --
+[{"id":2,"caption":"Hello, World from Advanced Java 2.0 to Advance Java 3.0!","username":"nurbolat1","likes":1,"usersLiked":["nurbolat1"]}]
+
+2022-03-03 11:44:55.495  INFO 10624 --- [http-nio-8082-exec-5] c.p.social_network.services.UserService  : Saving User marif226@mail.com
+2022-03-03 11:44:55.821  INFO 10624 --- [http-nio-8082-exec-5] c.p.social_network.web.AuthController    : User Registration
+2022-03-03 11:44:55.834  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/signup
+null
+{
+    "email": "marif226@mail.com",
+    "firstname": "Marif",
+    "lastname": "Nagiev",
+    "username": "marif226",
+    "password": "Qwerty123!",
+    "confirmPassword": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"message":"User registered successfully"}
+
+2022-03-03 11:45:10.140  INFO 10624 --- [http-nio-8082-exec-7] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 11:45:10.143  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "marif226@mail.com",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg"}
+
+2022-03-03 11:45:22.319  INFO 10624 --- [http-nio-8082-exec-8] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+{"id":19,"firstname":"Marif","lastname":"Nagiev","email":"marif226@mail.com","bio":null}
+
+2022-03-03 11:45:52.157  INFO 10624 --- [http-nio-8082-exec-9] c.p.social_network.services.UserService  : Update User Info marif226@mail.com
+2022-03-03 11:45:52.253  INFO 10624 --- [http-nio-8082-exec-9] c.p.social_network.web.UserController    : Updating User marif226
+2022-03-03 11:45:52.255  INFO 10624 --- [http-nio-8082-exec-9] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/update
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+{
+    "email": "marif226@mail.com",
+    "firstname": "Marif",
+    "lastname": "Nagiev",
+    "bio": "marif226"
+}
+
+-- RESPONSE --
+{"id":19,"firstname":"Marif","lastname":"Nagiev","email":"marif226@mail.com","bio":"marif226"}
+
+2022-03-03 11:46:42.059  INFO 10624 --- [http-nio-8082-exec-10] c.p.social_network.services.UserService  : Saving User almass@mail.com
+2022-03-03 11:46:42.135  INFO 10624 --- [http-nio-8082-exec-10] c.p.social_network.web.AuthController    : User Registration
+2022-03-03 11:46:42.138  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/signup
+null
+{
+    "email": "almass@mail.com",
+    "firstname": "Almas",
+    "lastname": "Nurakhmetove",
+    "username": "almasjs",
+    "password": "Qwerty123!",
+    "confirmPassword": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"message":"User registered successfully"}
+
+2022-03-03 11:46:50.654  INFO 10624 --- [http-nio-8082-exec-1] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 11:46:50.658  INFO 10624 --- [http-nio-8082-exec-1] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "almass@mail.com",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ"}
+
+2022-03-03 11:47:28.415  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.UserService  : Sending Friend Request from marif226 to almasjs
+2022-03-03 11:47:28.440  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/almasjs/send-request
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+User marif226 sent friend request to user almasjs
+
+2022-03-03 11:47:40.783  INFO 10624 --- [http-nio-8082-exec-3] c.p.social_network.services.UserService  : Getting friends retrieved requests of user: almasjs
+2022-03-03 11:47:40.788  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/retrieved-requests
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":19,"firstname":"Marif","lastname":"Nagiev","email":"marif226@mail.com","bio":"marif226"}]
+
+2022-03-03 11:47:54.138  INFO 10624 --- [http-nio-8082-exec-4] c.p.social_network.services.UserService  : Accepting Friend Request from marif226 to almasjs
+2022-03-03 11:47:54.155  INFO 10624 --- [http-nio-8082-exec-4] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/marif226/accept-request
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+User almasjs accepted friend request from user marif226
+
+2022-03-03 11:48:18.620  INFO 10624 --- [http-nio-8082-exec-6] c.p.social_network.services.PostService  : Saving Post for User: marif226
+2022-03-03 11:48:18.656  INFO 10624 --- [http-nio-8082-exec-6] c.p.social_network.web.PostController    : Creating Post
+2022-03-03 11:48:18.660  INFO 10624 --- [http-nio-8082-exec-6] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /posts/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+{
+    "caption": "AITU!"
+}
+
+-- RESPONSE --
+{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}
+
+2022-03-03 11:48:35.579  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/6
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}
+
+2022-03-03 11:48:56.797  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.services.CommentService            : Saving comment for Post: 6
+2022-03-03 11:48:56.904  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.web.CommentController              : Commenting post 6
+2022-03-03 11:48:56.910  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/6/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+{
+    "message": "Se-2012!"
+}
+
+-- RESPONSE --
+{"id":16,"message":"Se-2012!","username":"almasjs"}
+
+2022-03-03 11:49:09.432  INFO 10624 --- [http-nio-8082-exec-8] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/6
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}
+
+2022-03-03 11:49:19.608  INFO 10624 --- [http-nio-8082-exec-9] c.p.s.services.CommentService            : Getting all comments for post 6
+2022-03-03 11:49:19.617  INFO 10624 --- [http-nio-8082-exec-9] c.p.s.web.CommentController              : Getting comments of post 6
+2022-03-03 11:49:19.619  INFO 10624 --- [http-nio-8082-exec-9] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /comment/6/all
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":16,"message":"Se-2012!","username":"almasjs"}]
+
+2022-03-03 11:49:36.315  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.services.CommentService            : Getting all comments for post 6
+2022-03-03 11:49:36.323  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.web.CommentController              : Getting comments of post 6
+2022-03-03 11:49:36.325  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /comment/6/all
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":16,"message":"Se-2012!","username":"almasjs"}]
+
+2022-03-03 11:49:47.322  INFO 10624 --- [http-nio-8082-exec-1] c.p.s.services.CommentService            : Saving comment for Post: 6
+2022-03-03 11:49:47.328  INFO 10624 --- [http-nio-8082-exec-1] c.p.s.web.CommentController              : Commenting post 6
+2022-03-03 11:49:47.330  INFO 10624 --- [http-nio-8082-exec-1] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/6/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+{
+    "message": "Se-2012!"
+}
+
+-- RESPONSE --
+{"id":17,"message":"Se-2012!","username":"almasjs"}
+
+2022-03-03 11:49:50.301  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.services.CommentService            : Getting all comments for post 6
+2022-03-03 11:49:50.307  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.web.CommentController              : Getting comments of post 6
+2022-03-03 11:49:50.309  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /comment/6/all
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":16,"message":"Se-2012!","username":"almasjs"},{"id":17,"message":"Se-2012!","username":"almasjs"}]
+
+2022-03-03 11:50:04.700  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.services.CommentService            : Saving comment for Post: 6
+2022-03-03 11:50:04.704  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.web.CommentController              : Commenting post 6
+2022-03-03 11:50:04.706  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/6/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+{
+    "message": "Se-2013!"
+}
+
+-- RESPONSE --
+{"id":18,"message":"Se-2013!","username":"almasjs"}
+
+2022-03-03 11:50:06.665  INFO 10624 --- [http-nio-8082-exec-4] c.p.s.services.CommentService            : Getting all comments for post 6
+2022-03-03 11:50:06.672  INFO 10624 --- [http-nio-8082-exec-4] c.p.s.web.CommentController              : Getting comments of post 6
+2022-03-03 11:50:06.674  INFO 10624 --- [http-nio-8082-exec-4] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /comment/6/all
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":16,"message":"Se-2012!","username":"almasjs"},{"id":17,"message":"Se-2012!","username":"almasjs"},{"id":18,"message":"Se-2013!","username":"almasjs"}]
+
+2022-03-03 11:50:20.810  INFO 10624 --- [http-nio-8082-exec-6] c.p.s.services.CommentService            : Deleting comment 16 for post 6
+2022-03-03 11:50:20.816  INFO 10624 --- [http-nio-8082-exec-6] c.p.s.web.CommentController              : Deleting comment 16
+2022-03-03 11:50:20.819  INFO 10624 --- [http-nio-8082-exec-6] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /comment/16/delete
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+{"message":"Comment was deleted"}
+
+2022-03-03 11:50:23.956  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.services.CommentService            : Getting all comments for post 6
+2022-03-03 11:50:23.966  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.web.CommentController              : Getting comments of post 6
+2022-03-03 11:50:23.970  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /comment/6/all
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+[{"id":17,"message":"Se-2012!","username":"almasjs"},{"id":18,"message":"Se-2013!","username":"almasjs"}]
+
+2022-03-03 11:50:45.794  INFO 10624 --- [http-nio-8082-exec-7] c.p.social_network.services.PostService  : Getting posts of current user marif226
+2022-03-03 11:50:45.803  INFO 10624 --- [http-nio-8082-exec-7] c.p.social_network.web.PostController    : Getting all posts of current user
+2022-03-03 11:50:45.807  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/my-posts
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+[{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}]
+
+2022-03-03 11:51:01.839  INFO 10624 --- [http-nio-8082-exec-8] c.p.social_network.services.PostService  : Saving Post for User: marif226
+2022-03-03 11:51:01.846  INFO 10624 --- [http-nio-8082-exec-8] c.p.social_network.web.PostController    : Creating Post
+2022-03-03 11:51:01.847  INFO 10624 --- [http-nio-8082-exec-8] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /posts/create
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+{
+    "caption": "NU!"
+}
+
+-- RESPONSE --
+{"id":7,"caption":"NU!","username":"marif226","likes":0,"usersLiked":[]}
+
+2022-03-03 11:51:04.620  INFO 10624 --- [http-nio-8082-exec-9] c.p.social_network.services.PostService  : Getting posts of current user marif226
+2022-03-03 11:51:04.724  INFO 10624 --- [http-nio-8082-exec-9] c.p.social_network.web.PostController    : Getting all posts of current user
+2022-03-03 11:51:04.728  INFO 10624 --- [http-nio-8082-exec-9] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/my-posts
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+[{"id":7,"caption":"NU!","username":"marif226","likes":0,"usersLiked":[]},{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}]
+
+2022-03-03 11:51:19.379  INFO 10624 --- [http-nio-8082-exec-10] c.p.social_network.services.PostService  : Getting Post 5 of user marif226
+2022-03-03 11:51:19.508  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /posts/5/update
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+{
+    "caption": "Aveng-e-e-e-rs, Assemble!!!"
+}
+
+-- RESPONSE --
+
+2022-03-03 11:51:36.591  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.PostService  : Getting Post 7 of user marif226
+2022-03-03 11:51:36.595  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.PostService  : Updating Post: 7
+2022-03-03 11:51:36.599  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.web.PostController    : Updating post 7
+2022-03-03 11:51:36.604  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /posts/7/update
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+{
+    "caption": "Aveng-e-e-e-rs, Assemble!!!"
+}
+
+-- RESPONSE --
+{"id":7,"caption":"Aveng-e-e-e-rs, Assemble!!!","username":"marif226","likes":0,"usersLiked":[]}
+
+2022-03-03 11:51:40.010  INFO 10624 --- [http-nio-8082-exec-3] c.p.social_network.services.PostService  : Getting posts of current user marif226
+2022-03-03 11:51:40.017  INFO 10624 --- [http-nio-8082-exec-3] c.p.social_network.web.PostController    : Getting all posts of current user
+2022-03-03 11:51:40.022  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /posts/my-posts
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+[{"id":7,"caption":"Aveng-e-e-e-rs, Assemble!!!","username":"marif226","likes":0,"usersLiked":[]},{"id":6,"caption":"AITU!","username":"marif226","likes":0,"usersLiked":[]}]
+
+2022-03-03 11:52:08.365  INFO 10624 --- [http-nio-8082-exec-4] c.p.social_network.services.UserService  : Inactive post 7
+2022-03-03 11:52:08.365  INFO 10624 --- [http-nio-8082-exec-4] c.p.social_network.services.UserService  : Inactive post 6
+2022-03-03 11:52:08.366  INFO 10624 --- [http-nio-8082-exec-4] c.p.social_network.services.UserService  : Closing user account marif226
+2022-03-03 11:52:08.368  INFO 10624 --- [http-nio-8082-exec-4] c.p.social_network.web.UserController    : Make Visible only for friends User [FAILED toString()]
+2022-03-03 11:52:08.889  INFO 10624 --- [http-nio-8082-exec-4] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/close-account
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+Account marif226 is visible only for friends
+
+2022-03-03 11:52:26.433  INFO 10624 --- [http-nio-8082-exec-6] c.p.social_network.services.UserService  : Saving User almasj@mail.com
+2022-03-03 11:52:26.442  INFO 10624 --- [http-nio-8082-exec-6] c.p.social_network.web.AuthController    : User Registration
+2022-03-03 11:52:26.444  INFO 10624 --- [http-nio-8082-exec-6] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/signup
+null
+{
+    "email": "almasj@mail.com",
+    "firstname": "Almas",
+    "lastname": "Nurakhmetov",
+    "username": "almasj",
+    "password": "Qwerty123!",
+    "confirmPassword": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"message":"User registered successfully"}
+
+2022-03-03 11:52:44.093  INFO 10624 --- [http-nio-8082-exec-5] c.p.social_network.web.AuthController    : User Authorization
+2022-03-03 11:52:44.095  INFO 10624 --- [http-nio-8082-exec-5] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /auth/sign-in
+null
+{
+    "username": "almasj@mail.com",
+    "password": "Qwerty123!"
+}
+
+-- RESPONSE --
+{"success":true,"token":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMSIsInVzZXJuYW1lIjoiYWxtYXNqQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4Njc2NCwiZXhwIjoxNjQ2Mjg3NjY0fQ.xt4ahyZf50eLmgx5P4mT5HQvlQ224QRjbrAmMXuZbvvve4xo_LPPGfIy90mX4vNB0iVfAcTD2KHfYErsChEblQ"}
+
+2022-03-03 11:52:58.418  INFO 10624 --- [http-nio-8082-exec-7] c.p.social_network.services.UserService  : Getting friends of current user: almasj
+2022-03-03 11:52:58.428  INFO 10624 --- [http-nio-8082-exec-7] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/marif226
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMSIsInVzZXJuYW1lIjoiYWxtYXNqQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4Njc2NCwiZXhwIjoxNjQ2Mjg3NjY0fQ.xt4ahyZf50eLmgx5P4mT5HQvlQ224QRjbrAmMXuZbvvve4xo_LPPGfIy90mX4vNB0iVfAcTD2KHfYErsChEblQ
+
+-- RESPONSE --
+{"id":21,"firstname":"Almas","lastname":"Nurakhmetov","email":"almasj@mail.com","bio":null}
+
+2022-03-03 11:53:25.147  INFO 10624 --- [http-nio-8082-exec-8] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/marif226
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+
+2022-03-03 11:53:42.763  INFO 10624 --- [http-nio-8082-exec-10] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/marif226
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+
+2022-03-03 11:54:02.460  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.UserService  : Active post 7
+2022-03-03 11:54:02.462  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.UserService  : Active post 6
+2022-03-03 11:54:02.463  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.services.UserService  : Opening user account marif226
+2022-03-03 11:54:02.465  INFO 10624 --- [http-nio-8082-exec-2] c.p.social_network.web.UserController    : Make Visible for everyone User [FAILED toString()]
+2022-03-03 11:54:02.527  INFO 10624 --- [http-nio-8082-exec-2] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+POST /users/open-account
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIxOSIsInVzZXJuYW1lIjoibWFyaWYyMjZAbWFpbC5jb20iLCJsYXN0bmFtZSI6bnVsbCwiaWF0IjoxNjQ2Mjg2MzEwLCJleHAiOjE2NDYyODcyMTB9.hV2p1s7BzYO59uy2HsWIoVB3-2DyAxsd--sr2em4yGMIj40I4IKRbgu4282Z8TBHEORfqRKCfPDucVPnQk0Pjg
+
+-- RESPONSE --
+Account marif226 is visible for everyone
+
+2022-03-03 11:54:06.625  INFO 10624 --- [http-nio-8082-exec-3] c.p.s.l.RequestAndResponseLoggingFilter  : 
+ --- REQUEST --
+GET /users/marif226
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImZpcnN0bmFtZSI6bnVsbCwiaWQiOiIyMCIsInVzZXJuYW1lIjoiYWxtYXNzQG1haWwuY29tIiwibGFzdG5hbWUiOm51bGwsImlhdCI6MTY0NjI4NjQxMCwiZXhwIjoxNjQ2Mjg3MzEwfQ.3gFQXfDBGY0OiflTi1ZP2H7LnivhiVsLZmunAyNKdmbdtRIyAvsE3TkvxLZhCHltxZs7rLsaaONM6rStJ0cEQQ
+
+-- RESPONSE --
+
